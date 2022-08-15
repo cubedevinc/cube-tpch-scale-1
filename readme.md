@@ -4,3 +4,6 @@
 - PostgreSQL
 - TCP-H scale 1, size 1.5M rows and 1 GB
 
+## Setup
+
+Import this repo to your Cube Cloud deployment.
