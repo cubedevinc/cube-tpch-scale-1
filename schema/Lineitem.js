@@ -5,21 +5,22 @@ cube(`Lineitem`, {
    * Demo: Performance -> Pre-aggregations
    */
   preAggregations: {
-    lineitemsWithPricePerDay: {
-      measures: [Lineitem.count],
-      dimensions: [Lineitem.lExtendedprice],
-      timeDimension: Lineitem.lReceiptdate,
-      granularity: `day`,
-      /**
-       * Demo Performance -> Pre-aggregations -> Partitioning
-       */
-      partitionGranularity: `month`, // adds partitioning by month
-      refreshKey: {
-        every: `1 hour`,
-        updateWindow: `7 day`, // refresh partitions in this timeframe
-        incremental: true // only refresh the most recent partition
-      },
-    }
+    // lineitemsWithPricePerDay: {
+    //   measures: [Lineitem.count],
+    //   dimensions: [Lineitem.lExtendedprice],
+    //   timeDimension: Lineitem.lReceiptdate,
+    //   granularity: `day`,
+      
+    //   // /**
+    //   //  * Demo Performance -> Pre-aggregations -> Partitioning
+    //   //  */
+    //   // partitionGranularity: `month`, // adds partitioning by month
+    //   // refreshKey: {
+    //   //   every: `1 hour`,
+    //   //   updateWindow: `7 day`, // refresh partitions in this timeframe
+    //   //   incremental: true // only refresh the most recent partition
+    //   // },
+    // }
   },
   
   joins: {

@@ -1,3 +1,5 @@
+# Demo Deployment automation
+
 name: My Cube.js App
 on:
   push:
@@ -22,3 +24,4 @@ jobs:
         run: npx cubejs-cli deploy --token $CUBE_CLOUD_DEPLOY_AUTH
         env:
           CUBE_CLOUD_DEPLOY_AUTH: fb153ad68fe20100280c405cd76a5c7c
+          # CUBE_CLOUD_DEPLOY_AUTH: ${{ secrets.CUBE_CLOUD_DEPLOY_AUTH }} # Add env var to GitHub actions secrets!!
