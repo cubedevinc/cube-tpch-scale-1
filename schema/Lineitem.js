@@ -2,7 +2,7 @@ cube(`Lineitem`, {
   sql: `SELECT * FROM public.lineitem`,
   
   /**
-   * Demo: Performance - Pre-aggregations
+   * Demo: Performance -> Pre-aggregations
    */
   preAggregations: {
     lineitemsWithPricePerDay: {
@@ -10,6 +10,9 @@ cube(`Lineitem`, {
       dimensions: [Lineitem.lExtendedprice],
       timeDimension: Lineitem.lReceiptdate,
       granularity: `day`,
+      /**
+       * Demo Performance -> Pre-aggregations -> Partitioning
+       */
       partitionGranularity: `month`, // adds partitioning by month
       refreshKey: {
         every: `1 hour`,
