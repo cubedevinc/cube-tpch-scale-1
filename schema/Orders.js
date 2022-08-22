@@ -2,8 +2,16 @@ cube(`Orders`, {
   sql: `SELECT * FROM public.orders`,
   
   preAggregations: {
-    // Pre-Aggregations definitions go here
-    // Learn more here: https://cube.dev/docs/caching/pre-aggregations/getting-started  
+
+    /**
+     * Demo: Dev Tooling - Dev mode
+     * 
+     */
+    // ordersByDay: {
+    //   measures: [Orders.count],
+    //   timeDimension: Orders.oOrderdate,
+    //   granularity: `day`
+    // }
   },
   
   joins: {

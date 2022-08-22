@@ -1,9 +1,22 @@
 cube(`Lineitem`, {
   sql: `SELECT * FROM public.lineitem`,
   
+  /**
+   * Demo: Performance - Pre-aggregations
+   */
   preAggregations: {
-    // Pre-Aggregations definitions go here
-    // Learn more here: https://cube.dev/docs/caching/pre-aggregations/getting-started  
+    lineitemsWithPricePerDay: {
+      measures: [Lineitem.count],
+      dimensions: [Lineitem.lExtendedprice],
+      timeDimension: Lineitem.lReceiptdate,
+      granularity: `day`,
+      partitionGranularity: `month`, // adds partitioning by month
+      refreshKey: {
+        every: `1 hour`,
+        updateWindow: `7 day`, // refresh partitions in this timeframe
+        incremental: true // only refresh the most recent partition
+      },
+    }
   },
   
   joins: {
