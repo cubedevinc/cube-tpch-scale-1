@@ -19,6 +19,6 @@ jobs:
           node-version: 14.x
       - run: npm install
       - name: Deploy to Cube Cloud
-        run: echo $CUBE_CLOUD_DEPLOY_AUTH && npx cubejs-cli deploy
+        run: npx cubejs-cli deploy --token $CUBE_CLOUD_DEPLOY_AUTH
         env:
           CUBE_CLOUD_DEPLOY_AUTH: fb153ad68fe20100280c405cd76a5c7c
