@@ -40,5 +40,3 @@ In this 60-minute workshop you'll learn about:
 ## Setup
 
 Import this repo to your Cube Cloud deployment.
-
-Edit to trigger the build.
