@@ -17,11 +17,14 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: '0'
+      - name: Add Remote
+        run: |
+          git remote add cubecloud https://workshops.cubecloud.dev/repos/deployment_15
       - name: Deploy to Cube Cloud
         run: |
-          git config credential.helper store
-          git remote add cubecloud https://workshops.cubecloud.dev/repos/deployment_15
+          git config user.name "negaxhigtekj"
+          git config user.password "cresqvryqybr"
           git push cubecloud master
         env:
           CUBE_CLOUD_GIT_USER: negaxhigtekj
-          CUBE_CLOUD_GIT_PASSWORD: znhgewdfjleq
+          CUBE_CLOUD_GIT_PASSWORD: cresqvryqybr
