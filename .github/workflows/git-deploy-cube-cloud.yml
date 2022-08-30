@@ -22,8 +22,9 @@ jobs:
           git remote add cubecloud https://workshops.cubecloud.dev/repos/deployment_15
       - name: Deploy to Cube Cloud
         run: |
-          git config user.name "negaxhigtekj"
-          git config user.password "cresqvryqybr"
+          git config --global user.name 'negaxhigtekj' 
+          git config --global user.email 'negaxhigtekj'
+          git config --global user.password "cresqvryqybr"
           git push cubecloud master
         env:
           CUBE_CLOUD_GIT_USER: negaxhigtekj
