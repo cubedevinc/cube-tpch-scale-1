@@ -20,9 +20,9 @@ jobs:
           git config credential.helper store
           git remote add cubecloud https://workshops.cubecloud.dev/repos/deployment_15
 
-          git config user.name $CUBE_CLOUD_GIT_USER
+          git config user.name "$CUBE_CLOUD_GIT_USER"
           git config user.email "<>"
-          git config user.password $CUBE_CLOUD_GIT_PASSWORD
+          git config user.password "$CUBE_CLOUD_GIT_PASSWORD"
           
           git push cubecloud master
         env:
