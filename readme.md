@@ -40,3 +40,5 @@ In this 60-minute workshop you'll learn about:
 ## Setup
 
 Import this repo to your Cube Cloud deployment.
+
+This is a sample edit.
